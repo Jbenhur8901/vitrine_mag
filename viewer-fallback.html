@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visionneuse PDF</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #pdfViewer {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+
+        .download-prompt {
+            text-align: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .download-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .download-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const pdfPath = urlParams.get('pdf');
+
+        if (!pdfPath) {
+            document.body.innerHTML = '<div class="error">Aucun document PDF spécifié</div>';
+        } else {
+            const fileName = pdfPath.split('/').pop();
+            document.body.innerHTML = `
+                <div class="download-prompt">
+                    <h2>Le document PDF ne peut pas être affiché directement</h2>
+                    <p>Cliquez ci-dessous pour télécharger le document :</p>
+                    <a href="${pdfPath}" download class="download-button">Télécharger ${fileName}</a>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
