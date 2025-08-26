@@ -2,11 +2,13 @@
     --primary-color: #4CAF50;
     --primary-hover: #45a049;
     --text-color: #333;
-    --background-color: #f9f9f9;
+    --background-color: #f0f2f5;
     --card-background: #fff;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --footer-background: #2c3e50;
     --footer-text-color: #fff;
+    --banner-background: #2980b9; /* Nouvelle couleur pour la bannière */
+    --banner-text-color: #fff;
 }
 
 /* Reset et styles de base */
@@ -36,13 +38,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem; /* Augmentation de l'espacement */
 }
 
 /* En-tête */
 .header {
     text-align: center;
-    margin-bottom: 2rem;
 }
 
 .header .logo {
@@ -54,31 +55,99 @@ body {
 .header h1 {
     font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
 }
 
-/* Contenu principal */
-.main-content {
+/* Bannière de l'édition actuelle */
+.banner {
+    background: linear-gradient(135deg, var(--banner-background), #3498db);
+    width: 100%;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    color: var(--banner-text-color);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
-.subtitle {
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.banner-cover {
+    max-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.banner-text {
+    text-align: center;
+}
+
+.banner-subtitle {
     font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+.banner-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.banner-button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.banner-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+}
+
+/* Section du catalogue */
+.main-content {
+    width: 100%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
     color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.section-description {
+    font-size: 1rem;
+    color: #666;
     margin-bottom: 2rem;
 }
 
-/* Carte du document avec couverture */
+/* Grille des documents */
+.document-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Carte du document */
 .document-card {
     background-color: var(--card-background);
     border-radius: 15px;
     padding: 1.5rem;
     box-shadow: 0 4px 6px var(--shadow-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    max-width: 300px;
-    margin: 0 auto;
-    overflow: hidden; /* Pour que l'image ne dépasse pas */
+    text-align: center;
 }
 
 .document-card:hover {
@@ -86,9 +155,21 @@ body {
     box-shadow: 0 6px 12px var(--shadow-color);
 }
 
+.document-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.document-cover {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
 .document-cover img {
     width: 100%;
-    border-radius: 10px;
+    height: auto;
+    display: block;
     transition: transform 0.3s ease;
 }
 
@@ -98,7 +179,6 @@ body {
 
 .document-title {
     font-size: 1.2rem;
-    color: var(--text-color);
     font-weight: 500;
     margin-top: 1rem;
 }
@@ -111,7 +191,6 @@ body {
     text-align: center;
     width: 100%;
     border-radius: 10px;
-    margin-top: 2rem;
 }
 
 .social-media {
@@ -143,15 +222,15 @@ body {
         font-size: 2rem;
     }
 
-    .subtitle {
-        font-size: 1rem;
+    .banner {
+        padding: 2rem 1rem;
     }
 
-    .document-card {
-        padding: 1rem;
+    .banner-content {
+        flex-direction: column;
     }
 
-    .document-title {
-        font-size: 1rem;
+    .banner-title {
+        font-size: 1.5rem;
     }
 }

@@ -3,35 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Librairie Virtuelle DGPME</title>
+    <title>Catalogue DGPME</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Ajout des icônes FontAwesome pour les réseaux sociaux -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <!-- En-tête avec logo et titre -->
         <header class="header">
             <img src="img/logo-dgpme2.png" alt="Logo DGPME" class="logo">
             <h1>Librairie Virtuelle DGPME</h1>
         </header>
 
-        <!-- Section principale -->
-        <main class="main-content">
-            <p class="subtitle">Découvrez notre magazine : <strong>Congo, terre d'opportunité & d'innovation pour les PME</strong></p>
+        <section class="banner">
+            <div class="banner-content">
+                <img src="img/cover_ed2.jpeg" alt="Couverture du magazine actuel" class="banner-cover">
+                <div class="banner-text">
+                    <p class="banner-subtitle">Édition actuelle :</p>
+                    <h2 class="banner-title">Congo, terre d'opportunité & d'innovation pour les PME</h2>
+                    <a href="pdfs/Compress_ed2.pdf" class="banner-button" target="_blank">
+                        Lire le magazine
+                    </a>
+                </div>
+            </div>
+        </section>
 
-            <!-- Carte du document avec couverture -->
-            <div class="document-card">
-                <a href="pdfs/Compress2.pdf" class="document-link" target="_blank">
-                    <div class="document-cover">
-                        <img src="img/cover.jpeg" alt="Couverture du magazine">
-                    </div>
-                    <div class="document-title">Voir le magazine</div>
-                </a>
+        <main class="main-content">
+            <h2 class="section-title">Catalogue des magazines</h2>
+            <p class="section-description">Découvrez nos magazines et plongez dans l'univers des PME congolaises.</p>
+
+            <div class="document-grid">
+                <div class="document-card">
+                    <a href="pdfs/Compress_ed2.pdf" class="document-link" target="_blank">
+                        <div class="document-cover">
+                            <img src="img/cover_ed2.jpeg" alt="Couverture du 2e numéro">
+                        </div>
+                        <div class="document-title">Magazine - 2e édition</div>
+                    </a>
+                </div>
+                <div class="document-card">
+                    <a href="pdfs/Compress_ed1.pdf" class="document-link" target="_blank">
+                        <div class="document-cover">
+                            <img src="img/cover.jpeg" alt="Couverture du 1er numéro">
+                        </div>
+                        <div class="document-title">Magazine - 1ère édition</div>
+                    </a>
+                </div>
             </div>
         </main>
 
-        <!-- Pied de page avec réseaux sociaux -->
         <footer class="footer">
             <div class="social-media">
                 <a href="https://www.facebook.com/DGMPECongo" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
